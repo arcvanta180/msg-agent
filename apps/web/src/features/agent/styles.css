@@ -1,0 +1,138 @@
+.run-overview {
+  padding: 24px;
+  margin-bottom: 30px;
+}
+
+.run-overview .ant-descriptions-item-label {
+  font-size: 12px;
+}
+
+.run-overview .ant-descriptions-item-content {
+  font-size: 12px;
+}
+
+.summary {
+  border-top: 1px solid #edf1f5;
+  margin-top: 12px;
+  padding-top: 20px;
+  font-size: 12px;
+}
+
+.summary strong {
+  font-weight: 500;
+  color: #74869a;
+}
+
+.summary p {
+  margin: 10px 0 0;
+  line-height: 1.9;
+}
+
+.trace-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.trace-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.trace-step {
+  display: flex;
+  padding: 23px;
+  gap: 24px;
+}
+
+.trace-number {
+  color: #a0b0c1;
+  background: #f2f5f8;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  width: 42px;
+  height: 42px;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.trace-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.trace-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 30px;
+}
+
+.trace-title h3 {
+  font-size: 14px;
+}
+
+.trace-title .ant-tag {
+  font-size: 12px;
+  line-height: 19px;
+}
+
+.trace-title > .muted {
+  margin-left: auto;
+  font-size: 12px;
+}
+
+.trace-result {
+  color: #738499;
+  font-size: 12px;
+  margin: 12px 0 16px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.audit-line {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 12px;
+  color: #8fa0b2;
+}
+
+.audit-line .ant-tag {
+  font-size: 12px;
+}
+
+.audit-line > span:last-child {
+  margin-left: 5px;
+}
+
+.trace-body .ant-collapse {
+  margin-top: 13px;
+  font-size: 12px;
+}
+
+.trace-body .ant-collapse-header {
+  padding-left: 0 !important;
+}
+
+.has-error {
+  border-color: #edcfc6;
+}
+
+.trace-step {
+  border-left: 3px solid #91caff;
+}
+
+.trace-number {
+  background: #e6f4ff;
+  color: #1677ff;
+}
+
+.has-error {
+  border-left-color: #ff7875;
+}

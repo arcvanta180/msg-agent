@@ -1,0 +1,147 @@
+@media (min-width: 1600px) {
+  .login-story {
+    padding: 56px 80px;
+  }
+}
+
+@media (max-width: 1200px) {
+  main {
+    padding: 26px 24px 32px;
+  }
+  .navigation {
+    width: 208px;
+  }
+  .main-shell {
+    margin-left: 208px;
+  }
+  .conversation-layout {
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 18px;
+  }
+  .group-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .stat {
+    padding: 20px 16px;
+  }
+  .stat > .stat-icon {
+    right: 14px;
+  }
+  .login-story {
+    padding: 40px 32px;
+  }
+}
+
+@media (max-width: 960px) {
+  .navigation {
+    width: 76px;
+    padding: 24px 10px 0;
+  }
+  .navigation .brand {
+    font-size: 0;
+    margin: 0 8px 32px;
+  }
+  .navigation .brand-icon {
+    margin: 0;
+    flex-shrink: 0;
+  }
+  .workspace-label,
+  .nav-label,
+  .demo-note,
+  .user-block > div,
+  .user-avatar {
+    display: none;
+  }
+  nav a {
+    justify-content: center;
+    padding: 16px;
+  }
+  .user-block button {
+    margin: auto;
+  }
+  .main-shell {
+    margin-left: 76px;
+  }
+  .conversation-layout {
+    grid-template-columns: 1fr;
+  }
+  .group-sidebar {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .stats-grid {
+    gap: 12px;
+  }
+  .stat > .stat-icon {
+    display: none;
+  }
+  .login-page {
+    grid-template-columns: 1fr;
+  }
+  .login-story {
+    display: none;
+  }
+  .login-form-wrap {
+    min-height: 100vh;
+    padding: 32px 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  main {
+    padding: 22px 16px;
+  }
+  .topbar {
+    padding: 0 16px;
+  }
+  .topbar-divider,
+  .environment-tag,
+  footer span {
+    display: none;
+  }
+  .stats-grid,
+  .group-grid,
+  .variables-grid,
+  .group-sidebar {
+    grid-template-columns: 1fr;
+  }
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .page-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .panel {
+    overflow-x: auto;
+  }
+  .panel-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .stat > span:not(.stat-icon) {
+    display: none;
+  }
+  .panel .ant-table-wrapper {
+    min-width: 580px;
+  }
+  .page-heading p {
+    overflow-wrap: anywhere;
+  }
+  .trace-step {
+    padding: 16px;
+    gap: 12px;
+  }
+  .trace-title {
+    flex-wrap: wrap;
+  }
+  .trace-title > .muted {
+    margin-left: 0;
+    width: 100%;
+  }
+  .topbar > div {
+    font-size: 11px;
+  }
+}

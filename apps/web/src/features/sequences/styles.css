@@ -1,0 +1,57 @@
+.sequence-page {
+  padding: 0 4px 10px;
+}
+
+.sequence-form {
+  padding: 2px 23px 24px;
+  border-bottom: 1px solid #edf1f5;
+}
+
+.sequence-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 550px;
+}
+
+.sequence-form label {
+  font-size: 12px;
+  color: #718196;
+  display: block;
+  margin-bottom: 9px;
+}
+
+.sequence-selector p {
+  margin: 0 0 7px;
+}
+
+.variables-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.variables-grid textarea {
+  font-size: 12px;
+  line-height: 1.8;
+  background: #fafbfd;
+  border-color: #e1e7ee;
+}
+
+.sequence-form > .ant-alert {
+  margin-bottom: 16px;
+}
+
+.empty-description {
+  padding: 35px;
+  color: #8999ab;
+}
+
+.sequence-selector {
+  margin-bottom: 18px;
+}
+
+.variables-grid textarea {
+  font-size: 12px;
+}

@@ -1,0 +1,68 @@
+services:
+  db:
+    image: ${POSTGRES_IMAGE:-postgres:16-alpine}
+    environment:
+      POSTGRES_USER: msg
+      POSTGRES_PASSWORD: msg
+      POSTGRES_DB: msg_agent
+    ports: ["127.0.0.1:54329:5432"]
+    volumes: ["pgdata:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U msg -d msg_agent"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+  migrate:
+    build: .
+    command:
+      [
+        "sh",
+        "-c",
+        "node dist/packages/db/src/cli.js migrate && node dist/packages/db/src/cli.js seed",
+      ]
+    environment: &database
+      DATABASE_URL: postgres://msg:msg@db:5432/msg_agent
+    depends_on:
+      db: { condition: service_healthy }
+  gateway:
+    build: .
+    command: ["node", "dist/apps/mock-gateway/src/main.js"]
+    environment: *database
+    ports: ["127.0.0.1:3101:3101"]
+    depends_on:
+      migrate: { condition: service_completed_successfully }
+  agent:
+    build: .
+    command: ["node", "dist/apps/mock-agent/src/main.js"]
+    environment: *database
+    ports: ["127.0.0.1:3102:3102"]
+    depends_on:
+      migrate: { condition: service_completed_successfully }
+  api:
+    build: .
+    environment:
+      <<: *database
+      GATEWAY_URL: http://gateway:3101
+      AGENT_URL: http://agent:3102
+      WEB_ORIGIN: http://localhost:5173
+    ports: ["127.0.0.1:3000:3000"]
+    depends_on:
+      migrate: { condition: service_completed_successfully }
+  web:
+    build: .
+    command:
+      [
+        "pnpm",
+        "exec",
+        "vite",
+        "--config",
+        "apps/web/vite.config.ts",
+        "--host",
+        "0.0.0.0",
+      ]
+    environment:
+      API_PROXY: http://api:3000
+    ports: ["127.0.0.1:5173:5173"]
+    depends_on: [api]
+volumes:
+  pgdata:
