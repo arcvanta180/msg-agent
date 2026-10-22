@@ -172,6 +172,7 @@ export default function AccountsPage() {
                         {canTransition(a.status, "suspended") && (
                           <Button
                             aria-label="释放账号"
+                            disabled={busy === a.id}
                             size="small"
                             danger
                             icon={<DeleteOutlined />}
